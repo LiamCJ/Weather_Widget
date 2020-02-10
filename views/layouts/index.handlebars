@@ -1,0 +1,30 @@
+<div id="widget" class="container-fluid" >
+		<div class="inline" id="symbol" >
+			<img src={{image}}> 
+			<p>{{condition}}</p>
+		</div>
+		<div class="inline space" id="temps" >
+			<div id="city">
+				<i class="inline" >Cape Town</i> 
+				<p class="inline" >RSA</p>	
+			</div>
+			<div>
+			<p class="inline" id="hi">{{temp}}°</p>
+			<div class="inline">
+				<p>HI:{{maxTemp}}° <br> LOW: {{minTemp}}°</p>
+			</div>
+				
+			</div>
+		</div>
+		<div class="inline space" id="conditions" >
+			<p id="date">Today - {{day}} {{month}} {{year}}</p>	
+			<p>PRECIP: 9% <br> HUMIDTY: {{humidty}}% <br> WINDS: NW {{wind}} KPH</p>
+		</div>
+		{{#each nextDays}}
+		<div class="inline space days" id={{this.id}}>
+			<div id="day">{{this.day}}</div>
+			<div id="symbolD" > <img src = {{this.image}} > </div>
+			<div id="temp" >{{this.obj.main.temp_max}}°/{{this.obj.main.temp_min}}°</div>
+		</div>
+		{{/each}}
+	</div>
